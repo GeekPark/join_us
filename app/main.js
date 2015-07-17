@@ -1,9 +1,11 @@
-import React from 'react';
-import Hello from './component.jsx';
-import './main.css'
+var $ = require('jquery');
+var React = require('react');
+var Header = require('./components/header');
+
+require('./main.styl');
 
 main();
 
 function main() {
-    React.render(<Hello />, document.getElementById('app'));
+    React.render(<Header />, $('#app')[0]);
 }
