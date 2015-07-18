@@ -1,5 +1,7 @@
 $color-modal = #1E5A77
 .modal-wrap
+  display none
+.modal-bg
   position fixed
   background-color rgba(0,0,0,0.6)
   left 0
@@ -8,21 +10,24 @@ $color-modal = #1E5A77
   height 100%
   opacity 0
   display none
-  z-index: 10
+  z-index 3
+  transition opacity .2s
 .modal-show
   opacity 1
   display block
+.modal-bg.show
+  display block
+  opacity 1
 
-$dialog-w = 880px
+$dialog-w = 680px
 $dialog-h = 450px
 .modal-dialog
-  position absolute
+  position fixed
   display block
+  z-index 11
   width $dialog-w
   background-color #fff
-  position absolute
   margin-left -($dialog-w/2)
-  z-index 11
   height $dialog-h
   border-radius 3px
   left 50%
@@ -30,7 +35,14 @@ $dialog-h = 450px
   transform translateY(-50%)
 .modal-job-list
   overflow-y auto
-  height $dialog-h - 80px
+  margin-top 20px
+  height $dialog-h - 140px
+  padding 0 20px 5px 20px
+  border 1px dashed #aeaeae
+  li
+    list-style-type none
+    font-size 0.9rem
+    color #555
 .modal-container
   padding 12px 15px
   position relative
@@ -44,7 +56,18 @@ $dialog-h = 450px
   color $color-modal
   right 15px
   top 10px
+  cursor pointer
 .modal-item
   display none
   &.show
     display block
+.modal-mailto
+  display inline-block
+  color #fff
+  padding 8px 20px
+  text-decoration none
+  background-color #3BA1F5
+  border 1px solid #1481DB
+  letter-spacing 1px
+  border-radius 3px
+  margin-top 10px
