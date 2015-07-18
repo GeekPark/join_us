@@ -4,10 +4,9 @@ var React = require('react');
 var Header = require('./components/header');
 var About = require('./components/about');
 var Culture = require('./components/culture');
-<<<<<<< HEAD
 var Positions  = require('./components/positions');
-var Modal = require('./components/modal');
 var Footer = require('./components/footer');
+var Modal = require('./components/modal');
 
 require('./main.styl');
 require('./modal.js');
@@ -18,8 +17,6 @@ var Layout = React.createClass({
       <div>
         <Header />
         <About />
-<<<<<<< HEAD
-=======
         <Culture />
         <Positions />
         <Footer/>

@@ -29,15 +29,6 @@ var list = _.map(sectionData.list, (ele, index) => {
 });
 
 var imagesList = _.map(sectionData.images, (img, index) => {
-<<<<<<< HEAD
-  return (
-    <div className='image column'>
-      <img src={img.url} />
-      <div className="img-title">{img.title}</div>
-      <div className="img-bg"></div>
-    </div>
-  );
-=======
   var imgClass = 'image column five';
   if(index % 2 !== 0) imgClass += ' offset-one';
 
@@ -46,7 +37,6 @@ var imagesList = _.map(sectionData.images, (img, index) => {
             <div className="img-title">{img.title}</div>
             <div className="img-bg"></div>
           </div>;
->>>>>>> 完成职位列表静态布局
 });
 
 var Header = React.createClass({
