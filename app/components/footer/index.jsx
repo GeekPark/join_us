@@ -11,7 +11,7 @@ var Footer = React.createClass({
         <h3 className="footer-apply">如何申请？</h3>
         <div className="footer-email">
           <span>发送简历至</span>
-          <a href={pageData.footer.email}>{pageData.footer.email}</a>
+          <a href={'mailto:'+ pageData.footer.email}>{pageData.footer.email}</a>
         </div>
       </div>
     );
