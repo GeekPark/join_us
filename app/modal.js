@@ -9,7 +9,7 @@ $(function () {
   // 动态调整模态框内容的高度
   function adjustContHeight() {
     if(!$modal.hasClass('modal-show')) return;
-    $('.modal-job-list').height($('.modal-dialog').height() - 140);
+    $('.modal-job-list').height($('.modal-dialog').height() - $('.modal-title').height() - 110);
   }
 
   var modal = (() => {
