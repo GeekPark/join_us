@@ -5,12 +5,22 @@ var _ = require('lodash');
 $(function () {
   var $modal = $('#modal');
 
-  $('.js-modal-close').click(function () {
+  var modal = () => {
+    var show = (id) => {
+      $modal.find('.modal-item').removeClass('show');
+      $modal.find('#' + id).addClass('show');
+    };
+    return {
+      show: show
+    };
+  };
+
+  $('.js-modal-close').click(() => {
     $modal.removeClass('modal-show');
   });
 
   $('.js-show-modal').click(function () {
-    var name = $(this).data('name');
-    
+    var id = $(this).data('modalid');
+    modal.show(id);
   });
 });
