@@ -8,6 +8,7 @@ $color-modal = #1E5A77
   height 100%
   opacity 0
   display none
+  z-index: 10
 .modal-show
   opacity 1
   display block
@@ -21,7 +22,7 @@ $dialog-h = 450px
   background-color #fff
   position absolute
   margin-left -($dialog-w/2)
-  z-index 10
+  z-index 11
   height $dialog-h
   border-radius 3px
   left 50%
@@ -43,3 +44,5 @@ $dialog-h = 450px
   color $color-modal
   right 15px
   top 10px
+.modal-item
+  display none

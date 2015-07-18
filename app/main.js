@@ -5,14 +5,12 @@ var Header = require('./components/header');
 var About = require('./components/about');
 var Culture = require('./components/culture');
 <<<<<<< HEAD
+var Positions  = require('./components/positions');
 var Modal = require('./components/modal');
 var Footer = require('./components/footer');
-=======
-var Modal  = require('./components/modal');
-
->>>>>>> 完成模态框静态布局
 
 require('./main.styl');
+require('./modal.js');
 
 var Layout = React.createClass({
   render: function () {
@@ -21,15 +19,11 @@ var Layout = React.createClass({
         <Header />
         <About />
 <<<<<<< HEAD
-        <Culture />
-        <Modal />
-        <Footer/>
 =======
-        <section className="container">
-          <Culture />
-        </section>
+        <Culture />
+        <Positions />
+        <Footer/>
         <Modal />
->>>>>>> 完成模态框静态布局
       </div>
     );
   }
@@ -37,7 +31,11 @@ var Layout = React.createClass({
 
 React.render(<Layout />, $('#app')[0]);
 
-// jQuery Modal
+// 职位列表 hover 滑动
 $(function () {
-
+  $('.positions-item a').hover(function () {
+    $(this).css('background-color', $(this).data('color'));
+  }, function () {
+    $(this).css('background-color', '#fff');
+  });
 });
