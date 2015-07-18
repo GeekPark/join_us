@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var React = require('react');
+var Modal = require('react-modal');
 
 var Header = require('./components/header');
 var About = require('./components/about');
@@ -15,10 +16,8 @@ var Layout = React.createClass({
       <div>
         <Header />
         <About />
-        <section className="container">
-          <Culture />
-        </section>
-        <Modal title="前端开发工程师" show="false" />
+        <Culture />
+        <Modal />
         <Footer/>
       </div>
     );

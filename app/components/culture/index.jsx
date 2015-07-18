@@ -28,18 +28,20 @@ var list = _.map(sectionData.list, (ele, index) => {
   return <ListItem title={ele.title} des={ele.des} offset={offset}/>;
 });
 
-var imagesList = _.map(sectionData.images,(img, index) => {
-  return  <div className='image column'>
-            <img src={img.url} />
-            <div className="img-title">{img.title}</div>
-            <div className="img-bg"></div>
-          </div>
+var imagesList = _.map(sectionData.images, (img, index) => {
+  return (
+    <div className='image column'>
+      <img src={img.url} />
+      <div className="img-title">{img.title}</div>
+      <div className="img-bg"></div>
+    </div>
+  );
 });
 
 var Header = React.createClass({
   render: function () {
     return (
-      <div className="culture-wrap tac">
+      <div className="culture-wrap container tac">
         <h2 className="section-title">
           {sectionData.title}
         </h2>
