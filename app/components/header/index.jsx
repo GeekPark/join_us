@@ -6,6 +6,9 @@ var Header = React.createClass({
   render: function () {
     return (
       <div className="header-wrap">
+        <h1 className="header-en">
+          {pageData.header.en}
+        </h1>
         <h2 className="header-title">
           {pageData.header.title}
         </h2>
