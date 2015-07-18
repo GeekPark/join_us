@@ -1,12 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 var config = {
   entry: {
     app: path.resolve(__dirname, 'app/main.js'),
-    vendors: ['react','jquery','lodash', 'font-awesome-webpack'] 
+    vendors: ['react', 'jquery', 'lodash', 'font-awesome-webpack']
   },
   resolve: {
     extensions: ['', '.jsx', '.js'],
@@ -26,19 +26,20 @@ var config = {
       loader: 'babel' // 加载模块 'babel' 是 'babel-loader' 的缩写
     }, {
       test: /\.css$/, // Only .css files
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
     }, {
       test: /\.styl$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader!stylus-loader")
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
     }, {
       test: /\.(png|jpg)$/,
       loader: 'url?limit=25000'
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'url-loader?limit=10000&minetype=application/font-woff'
+      loader: 'url-loader?limit=100000&minetype=application/font-woff'
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file-loader'
+      loader: 'url-loader?limit=100000&minetype=application/font-woff'
+      // loader: 'file-loader'
     }]
   },
   plugins: [

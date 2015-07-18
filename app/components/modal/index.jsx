@@ -1,7 +1,6 @@
 var React = require('react');
 var _ = require('lodash');
 var modalData = require('pageData').modal;
-require('font-awesome-webpack');
 require('./index.styl');
 var JobCont = React.createClass({
   render: function () {
@@ -70,7 +69,7 @@ var Modal = React.createClass({
         <div className="modal-dialog">
           <div className="modal-container">
             <a href="javascript:;" className="modal-close js-modal-close">
-              <i className="fa fa-close"></i>
+              <i className="icon-close"></i>
             </a>
             {modalList}
           </div>
