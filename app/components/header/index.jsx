@@ -13,7 +13,7 @@ var Header = React.createClass({
           {pageData.header.title}
         </h2>
         <div className="header-button-wrap">
-          <a className="header-button">
+          <a className="header-button" href="#positions" id="go-to-positions">
             {pageData.header.button}
           </a>
         </div>

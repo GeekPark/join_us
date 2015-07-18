@@ -43,7 +43,7 @@ var Positions = React.createClass({
       return <Group key={index} name={ele.depart} jobs={ele.jobs} index={index} color={ele.color} />;
     });
     return (
-      <div className="positions-wrap tac">
+      <div className="positions-wrap tac" id="positions">
         <div className="positions-title">
           开放职位
         </div>

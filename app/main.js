@@ -35,4 +35,11 @@ $(function () {
   }, function () {
     $(this).css('background-color', '#fff');
   });
+
+  $('#go-to-positions').on('click', function (e) {
+    e.preventDefault();
+    $('html,body').animate({
+      scrollTop: parseInt($('#positions').offset().top) + 'px'
+    }, 800);
+  });
 });
