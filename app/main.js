@@ -1,12 +1,12 @@
 var $ = require('jquery');
 var React = require('react');
 
-var Header = require('./components/header');
-var About = require('./components/about');
-var Culture = require('./components/culture');
-var Positions  = require('./components/positions');
-var Footer = require('./components/footer');
-var Modal = require('./components/modal');
+var Header = require('./components/header/index.jsx');
+var About = require('./components/about/index.jsx');
+var Culture = require('./components/culture/index.jsx');
+var Positions  = require('./components/positions/index.jsx');
+var Footer = require('./components/footer/index.jsx');
+var Modal = require('./components/modal/index.jsx');
 
 require('./main.styl');
 require('./modal.js');
