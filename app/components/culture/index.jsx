@@ -33,7 +33,7 @@ var imagesList = _.map(sectionData.images, (img, index) => {
   if(index % 2 !== 0) imgClass += ' offset-one';
 
   return  <div className={imgClass}>
-            <img src={img.url} />
+            <img className="culture-img" src={img.url + '?imageView2/2/w/850'} />
             <div className="img-title">{img.title}</div>
             <div className="img-bg"></div>
           </div>;

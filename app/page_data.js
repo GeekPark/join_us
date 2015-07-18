@@ -1,7 +1,7 @@
 var pageData = {
   header: {
     title: '极客招募令',
-    en:'Geeks Make Recruitment',
+    en:'Geek at Park',
     button: 'Join Us'
   },
   about: {
@@ -25,19 +25,19 @@ var pageData = {
         des: '我们鼓励每位员工进行自我创新，这种精神不仅是保持互联网行业持续进化和不断发展的终极驱动力，可以促进优秀产品在各个行业的涌现。'
       }
     ],
-    condition: 'If you\'re afraid of a challenge',
+    condition: '我们欢迎不寻常的你 来和我们一起 改变世界',
     images: [
       {
-        title: '极客公园极客公园极客公园极客公园极客公园',
+        title: '海南年假',
         url:'http://7xiwib.com1.z0.glb.clouddn.com/geek-01.jpg'
       }, {
-        title: '极客公园',
-        url:'http://7xiwib.com1.z0.glb.clouddn.com/geek-02.jpg'
+        title: '公司环境',
+        url:'http://77g0kq.com2.z0.glb.qiniucdn.com/jobgeek-02.jpg'
       }, {
-        title: '极客公园',
+        title: '暖房Party',
         url:'http://7xiwib.com1.z0.glb.clouddn.com/geek-03.jpg'
       }, {
-        title: '极客公园',
+        title: '极客精神',
         url:'http://7xiwib.com1.z0.glb.clouddn.com/geek-04.jpg'
       }
     ]
