@@ -1,0 +1,42 @@
+$color-modal = #1E5A77
+.modal-wrap
+  position fixed
+  background-color rgba(0,0,0,0.6)
+  left 0
+  top 0
+  width 100%
+  height 100%
+  opacity 0
+  display none
+.modal-show
+  opacity 1
+  display block
+
+$dialog-w = 880px
+$dialog-h = 200px
+.modal-dialog
+  position absolute
+  display block
+  width $dialog-w
+  background-color #fff
+  position absolute
+  margin-left -($dialog-w/2)
+  z-index 10
+  min-height $dialog-h
+  border-radius 3px
+  left 50%
+  top 50%
+  margin-top -($dialog-h/2)
+.modal-container
+  padding 12px 15px
+  position relative
+.modal-title
+  margin 0
+  font-size 1.5rem
+  color $color-modal
+.modal-close
+  position absolute
+  font-size 1.5rem
+  color $color-modal
+  right 15px
+  top 10px
