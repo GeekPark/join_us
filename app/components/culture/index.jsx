@@ -6,9 +6,11 @@ require('./index.styl');
 
 var ListItem = React.createClass({
   render: function () {
+    var itemClass = 'culture-item column five';
+    if(this.props.offset) itemClass += ' offset-one';
+
     return (
-      // {if(this.props.offset) return offset-one}
-      <li className="culture-item column five">
+      <li className={itemClass}>
         <div className="culture-item-title">
           {this.props.title}
         </div>
@@ -21,7 +23,7 @@ var ListItem = React.createClass({
 });
 
 var list = _.map(sectionData.list, (ele, index) => {
-  var offset = index % 2 === 0;
+  var offset = index % 2 !== 0;
   return <ListItem title={ele.title} des={ele.des} offset={offset}/>;
 });
 
