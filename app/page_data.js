@@ -47,6 +47,7 @@ var pageData = {
         url:'http://7xiwib.com1.z0.glb.clouddn.com/geek-04.jpg'
       }
     ]
+<<<<<<< HEAD
   }, 
   footer: {
     title: '极客公园寻找小伙伴，快到碗里来！',
@@ -54,6 +55,63 @@ var pageData = {
     logo: 'http://7mnpep.com2.z0.glb.clouddn.com/assets/geekpark_new_logo1-aa5147d7ee4f629e10c533b965a68082.png',
     email: 'hr@geekpark.net'
   } 
+=======
+  },
+  modal: [
+    {
+      id: 'modal-about-video',
+      contType: 'iframe',
+      content: 'video on here'
+    },
+    {
+      id: 'modal-zishenjizhe',
+      contType: 'job',
+      title: '资深记者8k—13k',
+      content: {
+        duty: [
+          '极客公园深度原创内容的采写',
+          '在所擅长报道领域形成影响力',
+          '对影响业界的重要公司持续跟踪及深入解读能力'
+        ],
+        skills: [
+          '两年以上工作经验',
+          '本科以上， 新闻、社会学、计算机、经济等专业优先',
+          '熟练的英文读写',
+          '至少三篇拿得出手的代表作（随简历请附上代表作）'
+        ],
+        extra: [
+          '每天翻墙，并且理解为什么要翻墙',
+          '熟练使用至少三种以上效率工具',
+          '至少一项业余爱好并坚持多年'
+        ]
+      }
+    },
+    {
+      id: 'modal-kejibianji',
+      contType: 'job',
+      title: '科技编辑（海外方向）6k—8k',
+      content: {
+        duty: [
+          '极客公园深度原创内容的采写',
+          '在所擅长报道领域形成影响力',
+          '对影响业界的重要公司持续跟踪及深入解读能力'
+        ],
+        skills: [
+          '两年以上工作经验',
+          '本科以上， 新闻、社会学、计算机、经济等专业优先',
+          '熟练的英文读写',
+          '至少三篇拿得出手的代表作（随简历请附上代表作）'
+        ],
+        extra: [
+          '每天翻墙，并且理解为什么要翻墙',
+          '熟练使用至少三种以上效率工具',
+          '至少一项业余爱好并坚持多年'
+        ]
+      }
+    }
+  ]
+
+>>>>>>> 完成模态框静态布局
 };
 
 module.exports = pageData;

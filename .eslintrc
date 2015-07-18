@@ -12,6 +12,7 @@
     "strict": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": 0,
+    "no-script-url": 0,
     "no-unused-expressions": 0,
     "curly": 0,
     "no-multi-spaces": 0,
