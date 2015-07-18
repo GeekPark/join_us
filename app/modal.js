@@ -6,6 +6,12 @@ $(function () {
   var $body = $('body');
   var $modal = $('#modal');
 
+  // 动态调整模态框内容的高度
+  function adjustContHeight() {
+    if(!$modal.hasClass('modal-show')) return;
+    $('.modal-job-list').height($('.modal-dialog').height() - 140);
+  }
+
   var modal = (() => {
     var close = () => {
       var $modalBg = $('#modal-bg');
@@ -29,6 +35,7 @@ $(function () {
       $body.addClass('modal-on');
       $modalBg.addClass('show');
       $modalBg.on('click', () => close());
+      adjustContHeight();
     };
     return {
       show: show,
@@ -44,4 +51,5 @@ $(function () {
     var id = $(this).data('modalid');
     modal.show(id);
   });
+
 });

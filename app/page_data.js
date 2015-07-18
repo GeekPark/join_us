@@ -43,7 +43,7 @@ var pageData = {
     ]
   },
   footer: {
-    title: '极客公园寻找小伙伴，快到碗里来！',
+    title: '极客公园正在寻找小伙伴，快到碗里来！',
     des: '作为普通人，如果你说你想改变世界，可能很多人都说你是疯子。',
     logo: 'http://7mnpep.com2.z0.glb.clouddn.com/assets/geekpark_new_logo1-aa5147d7ee4f629e10c533b965a68082.png',
     email: 'hr@geekpark.net'
