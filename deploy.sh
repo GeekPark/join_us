@@ -1,3 +1,3 @@
 npm run deploy
-rsync -av deploy/ geekpark.net:gpk_zt/join_us/
+rsync -av dist/ geekpark.net:~/gpk_zt/job/
 echo '发布完成'

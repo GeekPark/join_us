@@ -7,11 +7,11 @@ var Footer = React.createClass({
     return (
       <div className="footer-wrap">
         <div className="footer-logo"><img src={pageData.footer.logo} /></div>
-        <div className="footer-title">{pageData.footer.title}</div>
+        <div className="container footer-title">{pageData.footer.title}</div>
         <h3 className="footer-apply">如何申请？</h3>
         <div className="footer-email">
           <span>发送简历至</span>
-          <a href={'mailto:'+ pageData.footer.email}>{pageData.footer.email}</a>
+          <a href={'mailto:' + pageData.footer.email}>{pageData.footer.email}</a>
         </div>
       </div>
     );
