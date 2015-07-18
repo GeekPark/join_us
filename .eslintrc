@@ -6,7 +6,7 @@
     "generators": true,
     "forOf": true,
     "modules": true,
-    "templateString": true
+    "templateStrings": true
   },
   "rules": {
     "strict": 0,

@@ -1,7 +1,38 @@
 @import './vendor/style/normalize.css'
 
+ul,li
+  margin 0
+  padding 0
+
 body
-  font-family Arial,"DIN Next Ultra Light","Helvetica Neue",Helvetica, "Lantinghei SC","Hiragino Sans GB",STHeiti, "Noto Sans S Chinese", "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei",sans-serif
+  font-family "open sans","DIN Next Ultra Light","Helvetica Neue",Helvetica, "Lantinghei SC","Hiragino Sans GB",STHeiti, "Noto Sans S Chinese", "Microsoft Yahei", "Microsoft Sans Serif", "WenQuanYi Micro Hei",sans-serif
   overflow-x hidden
   -webkit-font-smoothing antialiased
   font-size 16px
+  padding-bottom 500px
+.tac
+  text-align center
+.section-title
+  font-weight normal
+  font-size 1.5rem
+  letter-spacing 2px
+  display inline-block
+
+$container-width = 1000px
+$unit = $container-width/12
+
+.container
+  width $container-width
+  margin-left auto
+  margin-right auto
+  .column
+    display inline-block
+    margin-left -4px
+    vertical-align top
+    padding 5px
+  .six
+    width $unit*6
+  .five
+    width $unit*5
+  .offset-one
+    margin-left $unit
