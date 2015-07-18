@@ -42,7 +42,7 @@ var ModalCont = React.createClass({
       fillData = <div className="videoIframe">{this.props.data}</div>;
     }
     return (
-      <div className="modal-item" id={this.props.id}>
+      <div className="modal-item" id={'modal-' + this.props.id}>
         <h3 className="modal-title">{this.props.title}</h3>
         <a href="mailto:hr@geekpark.net"
            className="modal-mailto">
