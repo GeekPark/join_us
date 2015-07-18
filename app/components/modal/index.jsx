@@ -14,6 +14,7 @@ var JobCont = React.createClass({
       });
     };
     var getItem = function (title, name) {
+      if(!data[name]) return;
       return (
         <div className="modal-job-item">
           <h4>{title}</h4>
@@ -28,6 +29,7 @@ var JobCont = React.createClass({
         {getItem('岗位职责', 'duty')}
         {getItem('职位要求', 'skills')}
         {getItem('加分项', 'extra')}
+        {getItem('你将获得', 'reward')}
       </div>
     );
   }
