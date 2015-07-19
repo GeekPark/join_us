@@ -7,6 +7,9 @@ $(function () {
   var $body = $('body');
   var $modal = $('#modal');
 
+  // append modal mask
+  $('body').append('<div class="modal-bg" id="modal-bg"></div>');
+
   // 动态调整模态框内容的高度
   function adjustContHeight() {
     if(!$modal.hasClass('modal-show')) return;
@@ -16,42 +19,52 @@ $(function () {
   }
 
   var modal = (() => {
+    // modal mask
+    var $modalBg = $('#modal-bg');
+
     // modal close method
     var close = () => {
-      var $modalBg = $('#modal-bg');
-
+      // lock page scroll
       $body.removeClass('modal-on');
-      $modal.removeClass('modal-show');
-      $modalBg.removeClass('show');
+
+      $modal.removeClass('fadein');
+      $modalBg.removeClass('fadein');
+      setTimeout(() => {
+        $modal.removeClass('modal-show');
+        $modalBg.removeClass('show');
+      }, 500);
     };
 
     // modal show method
     var show = (id) => {
-      var $modalBg = $('#modal-bg');
-
+      // reset all modal child item, find the correct child
       $modal.find('.modal-item').removeClass('show');
       $modal.find('#modal-' + id).addClass('show');
 
-      if(!$modalBg.length) {
-        $('body').append('<div class="modal-bg" id="modal-bg"></div>');
-      }
-
-      $modalBg = $('#modal-bg');
-      $modal.addClass('modal-show');
+      // unlock page scroll
       $body.addClass('modal-on');
+
+
+      // appear modal
+      $modal.addClass('modal-show');
+      // show modal mask
       $modalBg.addClass('show');
-      $modalBg.on('click', () => close());
+
+      setTimeout(() => {
+        $modal.addClass('fadein');
+        $modalBg.addClass('fadein');
+      }, 100);
+
+      // recount modalcont height
       adjustContHeight();
+
+      // mount close modal
+      $modalBg.on('click', () => close());
     };
-    return {
-      show: show,
-      close: close
-    };
+    return { show, close };
   })();
 
-  $('.js-modal-close').click(() => {
-    modal.close();
-  });
+  $('.js-modal-close').click(() => modal.close());
 
   $('.js-show-modal').click(function () {
     var id = $(this).data('modalid');

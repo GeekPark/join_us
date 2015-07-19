@@ -6,7 +6,8 @@
     "generators": true,
     "forOf": true,
     "modules": true,
-    "templateStrings": true
+    "templateStrings": true,
+    "objectLiteralShorthandProperties": true
   },
   "rules": {
     "strict": 0,

@@ -13,11 +13,19 @@ $color-modal = #1E5A77
   z-index 3
   transition opacity .2s
 .modal-show
-  opacity 1
   display block
+  .modal-dialog
+    opacity 0
+    transform translateY(-60%)
+.modal-show.fadein
+  .modal-dialog
+    transform translateY(-50%)
+    opacity 1
+.fadein
+  opacity 1
 .modal-bg.show
   display block
-  opacity 1
+  transition opacity .3s
 
 $dialog-w = 680px
 $dialog-h = 450px
@@ -32,6 +40,7 @@ $dialog-h = 450px
   border-radius 3px
   left 50%
   top 50%
+  transition all .3s
   transform translateY(-50%)
 .modal-job-list
   overflow-y auto
