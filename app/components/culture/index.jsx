@@ -25,21 +25,23 @@ var ListItem = React.createClass({
 
 var list = _.map(sectionData.list, (ele, index) => {
   var offset = index % 2 !== 0;
-  return <ListItem title={ele.title} des={ele.des} offset={offset}/>;
+  return <ListItem title={ele.title} des={ele.des} offset={offset} key={index}/>;
 });
 
 var imagesList = _.map(sectionData.images, (img, index) => {
   var imgClass = 'image column five';
   if(index % 2 !== 0) imgClass += ' offset-one';
 
-  return  <div className={imgClass}>
-            <img className="culture-img" src={img.url + '?imageView2/2/w/850'} />
-            <div className="img-title">{img.title}</div>
-            <div className="img-bg"></div>
-          </div>;
+  return (
+    <div className={imgClass} key={index}>
+      <img className="culture-img" src={img.url + '?imageView2/2/w/850'} />
+      <div className="img-title">{img.title}</div>
+      <div className="img-bg"></div>
+    </div>
+  );
 });
 
-var Header = React.createClass({
+var Culture = React.createClass({
   render: function () {
     return (
       <div className="culture-wrap container tac">
@@ -58,4 +60,4 @@ var Header = React.createClass({
   }
 });
 
-module.exports = Header;
+module.exports = Culture;

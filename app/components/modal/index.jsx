@@ -6,8 +6,8 @@ var JobCont = React.createClass({
   render: function () {
     var data = this.props.data;
     var getList = function (name) {
-      return _.map(data[name], ele => {
-        return <li className="modal-job-li">
+      return _.map(data[name], (ele, index) => {
+        return <li className="modal-job-li" key={index}>
           {ele}
         </li>;
       });
@@ -54,12 +54,13 @@ var ModalCont = React.createClass({
     );
   }
 });
-var modalList = _.map(modalData, ele => {
+var modalList = _.map(modalData, (ele, index) => {
   return <ModalCont
     title={ele.title}
     id={ele.id}
     type={ele.contType}
     data={ele.content}
+    key={index}
   />;
 });
 var Modal = React.createClass({

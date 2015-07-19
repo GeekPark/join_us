@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var _ = require('lodash');
+// require('velocity-animate');
 
 // modal control js
 $(function () {
@@ -9,17 +10,22 @@ $(function () {
   // 动态调整模态框内容的高度
   function adjustContHeight() {
     if(!$modal.hasClass('modal-show')) return;
-    $('.modal-job-list').height($('.modal-dialog').height() - $('.modal-item.show .modal-title').height() - 110);
+    $('.modal-job-list').height(
+      $('.modal-dialog').height() - $('.modal-item.show .modal-title').height() - 110
+    );
   }
 
   var modal = (() => {
+    // modal close method
     var close = () => {
       var $modalBg = $('#modal-bg');
+
       $body.removeClass('modal-on');
       $modal.removeClass('modal-show');
       $modalBg.removeClass('show');
     };
 
+    // modal show method
     var show = (id) => {
       var $modalBg = $('#modal-bg');
 
