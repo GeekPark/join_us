@@ -6,7 +6,7 @@ var node_modules_dir = path.resolve(__dirname, 'node_modules');
 var config = {
   entry: {
     app: path.resolve(__dirname, 'app/main.js'),
-    vendors: ['react', 'jquery', 'lodash', 'font-awesome-webpack']
+    vendors: ['react', 'jquery', 'lodash']
   },
   resolve: {
     extensions: ['', '.jsx', '.js'],
