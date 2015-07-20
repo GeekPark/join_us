@@ -28,18 +28,29 @@ var Layout = React.createClass({
 
 React.render(<Layout />, $('#app')[0]);
 
-// 职位列表 hover 滑动
 $(function () {
+  // 职位列表 hover 滑动
   $('.positions-item a').hover(function () {
     $(this).css('background-color', $(this).data('color'));
   }, function () {
     $(this).css('background-color', '#fff');
   });
 
+  // 顶部滑动到职位的按钮
   $('#go-to-positions').on('click', function (e) {
     e.preventDefault();
     $('html,body').animate({
       scrollTop: parseInt($('#positions').offset().top) + 'px'
     }, 800);
   });
+
+  // 视频大小缩放
+  let $video = $('#video-frame');
+  let videoRatio = $video.width() / $video.height();
+  let windowW = $(window).width();
+  if(windowW < $video.width()) {
+    let newW = windowW - 30;
+    $video.width(newW);
+    $video.height(newW / videoRatio);
+  }
 });

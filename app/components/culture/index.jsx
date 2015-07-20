@@ -48,10 +48,9 @@ var Culture = React.createClass({
         <h2 className="section-title">
           {sectionData.title}
         </h2>
-        <ul className="culture-list">
-          {list}
-        </ul>
-        <h4>{sectionData.condition}</h4>
+        <h4 style={{maxWidth: '90%', margin: '0 auto 10px auto'}}>{sectionData.condition}</h4>
+        <div className="culture-video" dangerouslySetInnerHTML={{__html: sectionData.video}}>
+        </div>
         <ul className="imagesList">
           {imagesList}
         </ul>
