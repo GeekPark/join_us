@@ -25,6 +25,7 @@ var JobCont = React.createClass({
     };
     return (
       <div className="modal-job-list">
+        {getItem('', 'des')}
         {getItem('岗位职责', 'duty')}
         {getItem('职位要求', 'skills')}
         {getItem('加分项', 'extra')}
