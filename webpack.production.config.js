@@ -11,7 +11,7 @@ var config = {
   resolve: {
     extensions: ['', '.jsx', '.js'],
     alias: {
-      'pageData': path.resolve(__dirname, 'app/page_data.js')
+      'pageData': path.resolve('app/data/index.js')
       // 'react': pathToReact
     }
   },
