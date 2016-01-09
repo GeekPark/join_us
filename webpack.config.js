@@ -5,7 +5,7 @@ var node_modules = path.resolve(__dirname, 'node_modules');
 var config = {
   entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
   resolve: {
-    extensions: ['', '.jsx', '.js'],
+   extensions: ['', '.jsx', '.js'],
     alias: {
       'pageData': path.resolve('app/page_data.js')
       // 'react': pathToReact
