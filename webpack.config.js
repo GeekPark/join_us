@@ -17,8 +17,9 @@ var config = {
   },
   module: {
     loaders: [{
-      test: /\.jsx?$/, // 用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
-      loader: 'babel' // 加载模块 'babel' 是 'babel-loader' 的缩写
+      test: /\.js|\.jsx$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
     }, {
       test: /\.css$/, // Only .css files
       loader: 'style!css' // Run both loaders

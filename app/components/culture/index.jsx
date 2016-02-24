@@ -1,8 +1,10 @@
-var React = require('react');
-var _     = require('lodash');
-var sectionData = require('pageData').culture;
-require('./index.styl');
+import _ from 'lodash';
+import React from 'react';
+import { get as getData } from '../../data/fetch';
 
+const sectionData = getData('page').culture;
+
+require('./index.styl');
 
 var ListItem = React.createClass({
   render: function () {

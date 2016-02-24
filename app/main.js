@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var Header = require('./components/header/index.jsx');
 var About = require('./components/about/index.jsx');
@@ -7,6 +8,8 @@ var Culture = require('./components/culture/index.jsx');
 var Positions  = require('./components/positions/index.jsx');
 var Footer = require('./components/footer/index.jsx');
 var Modal = require('./components/modal/index.jsx');
+
+var fetchData = require('./data/fetch').fetch;
 
 require('./main.styl');
 require('./modal.js');
@@ -25,8 +28,12 @@ var Layout = React.createClass({
     );
   }
 });
+fetchData().then(() => {
+  ReactDOM.render(<Layout />, $('#app')[0]);
+}, () => {
+  alert('fetch fail');
+});
 
-React.render(<Layout />, $('#app')[0]);
 
 $(function () {
   // 职位列表 hover 滑动

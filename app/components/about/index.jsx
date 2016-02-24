@@ -1,9 +1,11 @@
-var React = require('react');
-var pageData = require('pageData');
+import React from 'react';
+import { get as getData } from '../../data/fetch';
+
 require('./index.styl');
 
 var About = React.createClass({
   render: function () {
+    const pageData = getData('page');
     return (
       <div className="about-wrap">
         <h4 className="about-motto">
