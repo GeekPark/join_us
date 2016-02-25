@@ -33,7 +33,7 @@ fetchData().then(() => {
   dealLoaded();
   initModal();
 }, () => {
-  alert('fetch fail');
+  alert('fetch fail, Plese make sure your network.');
 });
 
 
