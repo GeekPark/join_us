@@ -1,8 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import { get as getData } from '../../data/fetch';
-
-const sectionData = getData('page').culture;
+import { getData } from 'pageData';
 
 require('./index.styl');
 
@@ -25,26 +23,28 @@ var ListItem = React.createClass({
   }
 });
 
-var list = _.map(sectionData.list, (ele, index) => {
-  var offset = index % 2 !== 0;
-  return <ListItem title={ele.title} des={ele.des} offset={offset} key={index}/>;
-});
-
-var imagesList = _.map(sectionData.images, (img, index) => {
-  var imgClass = 'image column five';
-  if(index % 2 !== 0) imgClass += ' offset-one';
-
-  return (
-    <div className={imgClass} key={index}>
-      <img className="culture-img" src={img.url + '?imageView2/2/w/850'} />
-      <div className="img-title">{img.title}</div>
-      <div className="img-bg"></div>
-    </div>
-  );
-});
-
 var Culture = React.createClass({
-  render: function () {
+    render: function () {
+      const sectionData = getData('page').culture;
+
+      var list = _.map(sectionData.list, (ele, index) => {
+        var offset = index % 2 !== 0;
+        return <ListItem title={ele.title} des={ele.des} offset={offset} key={index}/>;
+      });
+
+      var imagesList = _.map(sectionData.images, (img, index) => {
+        var imgClass = 'image column five';
+        if(index % 2 !== 0) imgClass += ' offset-one';
+
+        return (
+          <div className={imgClass} key={index}>
+            <img className="culture-img" src={img.url + '?imageView2/2/w/850'} />
+            <div className="img-title">{img.title}</div>
+            <div className="img-bg"></div>
+          </div>
+        );
+      });
+
     return (
       <div className="culture-wrap container tac">
         <h2 className="section-title">

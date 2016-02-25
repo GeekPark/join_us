@@ -1,7 +1,7 @@
 var gist = [
   {
     name: 'jobs',
-    url: 'https://gist.githubusercontent.com/liyaodong/f1fac66eee98d3a31c49/raw/8b7c703aa07448c21c5a256d229d9401fd5f397f/jobs.json',
+    url: 'https://gist.githubusercontent.com/liyaodong/f1fac66eee98d3a31c49/raw/6fb8109b7251da79ca1f1697caeeb8e2701cfd09/jobs.json',
   },
   {
     name: 'page',

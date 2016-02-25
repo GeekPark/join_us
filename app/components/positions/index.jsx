@@ -1,6 +1,6 @@
-var _ = require('lodash');
-var React = require('react');
-var data = require('pageData').positions;
+import _ from 'lodash';
+import React from 'react';
+import { getData } from 'pageData';
 
 require('./index.styl');
 
@@ -39,6 +39,8 @@ var Group = React.createClass({
 
 var Positions = React.createClass({
   render: function () {
+    const data = getData('position').positions;
+
     var group = _.map(data, (ele, index) => {
       return <Group key={index} name={ele.depart} jobs={ele.jobs} index={index} color={ele.color} />;
     });

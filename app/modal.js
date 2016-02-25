@@ -1,9 +1,8 @@
 var $ = require('jquery');
 var _ = require('lodash');
-// require('velocity-animate');
 
 // modal control js
-$(function () {
+function initModal () {
   var $body = $('body');
   var $modal = $('#modal');
 
@@ -68,7 +67,9 @@ $(function () {
 
   $('.js-show-modal').click(function () {
     var id = $(this).data('modalid');
+    console.log(id);
     modal.show(id);
   });
+}
 
-});
+module.exports = initModal;

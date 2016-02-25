@@ -1,9 +1,10 @@
-var React = require('react');
-var pageData = require('pageData');
+import React from 'react';
+import { getData } from 'pageData';
 require('./index.styl');
 
 var Footer = React.createClass({
   render: function () {
+    const pageData = getData('page');
     return (
       <div className="footer-wrap">
         <div className="footer-logo"><img src={pageData.footer.logo} /></div>

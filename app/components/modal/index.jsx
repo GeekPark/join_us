@@ -1,7 +1,9 @@
-var React = require('react');
-var _ = require('lodash');
-var modalData = require('pageData').modal;
+import React from 'react';
+import _ from 'lodash';
+import { getData } from 'pageData';
+
 require('./index.styl');
+
 var JobCont = React.createClass({
   render: function () {
     var data = this.props.data;
@@ -55,17 +57,20 @@ var ModalCont = React.createClass({
     );
   }
 });
-var modalList = _.map(modalData, (ele, index) => {
-  return <ModalCont
-    title={ele.title}
-    id={ele.id}
-    type={ele.contType}
-    data={ele.content}
-    key={index}
-  />;
-});
+
 var Modal = React.createClass({
   render: function () {
+    const modalData = getData('jobs');
+
+    var modalList = _.map(modalData, (ele, index) => {
+      return <ModalCont
+        title={ele.title}
+        id={ele.id}
+        type={ele.contType}
+        data={ele.content}
+        key={index}
+        />;
+    });
     return (
       <section className="modal-wrap" id="modal">
         <div className="modal-dialog">

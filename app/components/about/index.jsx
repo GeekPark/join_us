@@ -1,5 +1,5 @@
 import React from 'react';
-import { get as getData } from '../../data/fetch';
+import { getData } from 'pageData';
 
 require('./index.styl');
 

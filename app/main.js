@@ -10,9 +10,9 @@ var Footer = require('./components/footer/index.jsx');
 var Modal = require('./components/modal/index.jsx');
 
 var fetchData = require('./data/fetch').fetch;
+var initModal = require('./modal.js');
 
 require('./main.styl');
-require('./modal.js');
 
 var Layout = React.createClass({
   render: function () {
@@ -30,12 +30,15 @@ var Layout = React.createClass({
 });
 fetchData().then(() => {
   ReactDOM.render(<Layout />, $('#app')[0]);
+  dealLoaded();
+  initModal();
 }, () => {
   alert('fetch fail');
 });
 
 
-$(function () {
+
+function dealLoaded () {
   // 职位列表 hover 滑动
   $('.positions-item a').hover(function () {
     $(this).css('background-color', $(this).data('color'));
@@ -60,4 +63,4 @@ $(function () {
     $video.width(newW);
     $video.height(newW / videoRatio);
   }
-});
+}

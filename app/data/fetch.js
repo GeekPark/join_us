@@ -14,7 +14,6 @@ const fetch = () => {
           remoteData[val.name] = d;
           counter += 1;
           if(counter === gist.length) resolve();
-          if(counter === gist.length) console.info('fetch done');
         })
         .error(reject);
     });
@@ -23,4 +22,4 @@ const fetch = () => {
 
 const get = type => remoteData[type];
 
-export { fetch, get };
+export { fetch, get as getData };

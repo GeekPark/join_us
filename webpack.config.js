@@ -3,11 +3,11 @@ var node_modules = path.resolve(__dirname, 'node_modules');
 // var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 
 var config = {
-  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
+  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main')],
   resolve: {
-   extensions: ['', '.jsx', '.js'],
+    extensions: ['', '.jsx', '.js'],
     alias: {
-      'pageData': path.resolve('app/data/index.js')
+      'pageData': path.resolve('app/data/fetch')
       // 'react': pathToReact
     }
   },
