@@ -67,7 +67,6 @@ function initModal () {
 
   $('.js-show-modal').click(function () {
     var id = $(this).data('modalid');
-    console.log(id);
     modal.show(id);
   });
 }

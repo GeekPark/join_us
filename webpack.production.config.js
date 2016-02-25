@@ -11,7 +11,7 @@ var config = {
   resolve: {
     extensions: ['', '.jsx', '.js'],
     alias: {
-      'pageData': path.resolve('app/data/index.js')
+      'pageData': path.resolve('app/data/fetch')
       // 'react': pathToReact
     }
   },
@@ -21,9 +21,9 @@ var config = {
   },
   module: {
     loaders: [{
-      test: /\.jsx?$/, // 用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
-      exclude: [node_modules_dir],
-      loader: 'babel' // 加载模块 'babel' 是 'babel-loader' 的缩写
+      test: /\.js|\.jsx$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
     }, {
       test: /\.css$/, // Only .css files
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
