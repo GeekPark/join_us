@@ -16,6 +16,9 @@ var JobCont = React.createClass({
   }
 });
 var ModalCont = React.createClass({
+  stat: function(action) {
+    window.ga('send', 'event', 'position', action, this.props.title);
+  },
   render: function () {
     var fillData;
     if(this.props.type === 'iframe') {
@@ -27,12 +30,14 @@ var ModalCont = React.createClass({
       <div className="modal-item" id={'modal-' + this.props.id}>
         <h3 className="modal-title">{this.props.title}</h3>
         <a href="mailto:hr@geekpark.net"
-           className="modal-mailto">
+           className="modal-mailto"
+           onClick={() => this.stat('mail')}
+           >
           hr@geekpark.net
         </a>
         {
           this.props.url ?
-            <a href={this.props.url} target="_blank" className="modal-mailto modal-lagou">去拉钩投简历</a>
+            <a href={this.props.url} onClick={() => this.stat('lagou')} target="_blank" className="modal-mailto modal-lagou">去拉勾投简历</a>
             : null
         }
         {fillData}

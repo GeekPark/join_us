@@ -68,6 +68,7 @@ function initModal () {
   $('.js-show-modal').click(function () {
     var id = $(this).data('modalid');
     modal.show(id);
+    window.ga('send', 'event', 'position', 'view', $(this).text());
   });
 }
 
