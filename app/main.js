@@ -33,11 +33,11 @@ var Layout = React.createClass({
 
 ReactDOM.render(<Loading />, $('#app')[0]);
 
-fetchData().then(() => {
+fetchData(() => {
   ReactDOM.render(<Layout />, $('#app')[0]);
   dealLoaded();
   initModal();
-}, () => {
+}).error(() => {
   alert('fetch fail, Plese make sure your network.');
 });
 
