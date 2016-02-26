@@ -1,20 +1,16 @@
 极客公园招聘专题
 ======
 
+[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
 ### 安装
 `npm i`
 
 ### 开发
-`npm run dev`
+`npm start`
 
 ### 发布
-`sh deploy.sh`
+`npm run deploy`
 
 ### 动态数据修改
-动态文字和 `<img>` 前景图片都在 `app/data/page.js` 中进行修改
-
-在 `app/data/positions.js` 内修改职位描述列表
-在 `app/data/modal/*.js` 内增加职位的具体描述
-
-
-`vi app/page_data.js`
+https://github.com/GeekPark/update_join_us

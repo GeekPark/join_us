@@ -9,6 +9,8 @@ var Positions  = require('./components/positions/index.jsx');
 var Footer = require('./components/footer/index.jsx');
 var Modal = require('./components/modal/index.jsx');
 
+var Loading = require('./components/loading/index.jsx');
+
 var fetchData = require('./data/fetch').fetch;
 var initModal = require('./modal.js');
 
@@ -28,6 +30,9 @@ var Layout = React.createClass({
     );
   }
 });
+
+ReactDOM.render(<Loading />, $('#app')[0]);
+
 fetchData().then(() => {
   ReactDOM.render(<Layout />, $('#app')[0]);
   dealLoaded();
