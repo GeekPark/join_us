@@ -4,7 +4,7 @@ require('./index.styl');
 
 var Footer = React.createClass({
   render: function () {
-    const pageData = getData('page');
+    const pageData = getData('page.json');
     return (
       <div className="footer-wrap">
         <div className="footer-logo"><img src={pageData.footer.logo} /></div>

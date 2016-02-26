@@ -5,7 +5,7 @@ require('./index.styl');
 
 var Header = React.createClass({
   render: function () {
-    const data = getData('page');
+    const data = getData('page.json');
 
     return (
       <div className="header-wrap">

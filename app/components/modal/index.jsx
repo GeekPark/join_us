@@ -6,32 +6,11 @@ require('./index.styl');
 
 var JobCont = React.createClass({
   render: function () {
-    var data = this.props.data;
-    var getList = function (name) {
-      return _.map(data[name], (ele, index) => {
-        return <li className="modal-job-li" key={index}>
-          {ele}
-        </li>;
-      });
-    };
-    var getItem = function (title, name) {
-      if(!data[name]) return;
-      return (
-        <div className="modal-job-item">
-          <h4>{title}</h4>
-          <ul>
-            {getList(name)}
-          </ul>
-        </div>
-      );
-    };
     return (
       <div className="modal-job-list">
-        {getItem('', 'des')}
-        {getItem('岗位职责', 'duty')}
-        {getItem('职位要求', 'skills')}
-        {getItem('加分项', 'extra')}
-        {getItem('你将获得', 'reward')}
+        <h3>职位诱惑</h3>
+        <div className="modal-job-request" dangerouslySetInnerHTML={{__html: this.props.request}}></div>
+        <div className="modal-job-des" dangerouslySetInnerHTML={{__html: this.props.des}}></div>
       </div>
     );
   }
@@ -39,11 +18,10 @@ var JobCont = React.createClass({
 var ModalCont = React.createClass({
   render: function () {
     var fillData;
-    if(this.props.type === 'job') {
-      fillData = <JobCont data={this.props.data} />;
-    }
     if(this.props.type === 'iframe') {
       fillData = <div className="videoIframe">{this.props.data}</div>;
+    } else {
+      fillData = <JobCont {...this.props} />;
     }
     return (
       <div className="modal-item" id={'modal-' + this.props.id}>
@@ -52,6 +30,11 @@ var ModalCont = React.createClass({
            className="modal-mailto">
           hr@geekpark.net
         </a>
+        {
+          this.props.url ?
+            <a href={this.props.url} target="_blank" className="modal-mailto modal-lagou">去拉钩投简历</a>
+            : null
+        }
         {fillData}
       </div>
     );
@@ -60,7 +43,7 @@ var ModalCont = React.createClass({
 
 var Modal = React.createClass({
   render: function () {
-    const modalData = getData('jobs');
+    const modalData = getData('jobs.json');
 
     var modalList = _.map(modalData, (ele, index) => {
       return <ModalCont
@@ -69,6 +52,9 @@ var Modal = React.createClass({
         type={ele.contType}
         data={ele.content}
         key={index}
+        request={ele.request}
+        des={ele.des}
+        url={ele.url}
         />;
     });
     return (

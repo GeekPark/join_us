@@ -1,22 +1,22 @@
 const $ = require('jquery');
 const _ = require('lodash');
-const gist = require('./gist');
+const GIST = 'https://api.github.com/gists/f1fac66eee98d3a31c49';
 
 let remoteData = {};
 
 const fetch = () => {
-  let counter = 0;
   return new Promise((resolve, reject) => {
-    gist.forEach(val => {
-      $.ajax(val.url)
-        .done(data => {
-          const d = JSON.parse(data);
-          remoteData[val.name] = d;
-          counter += 1;
-          if(counter === gist.length) resolve();
-        })
-        .error(reject);
-    });
+    $.ajax(GIST)
+      .done( d => {
+        const files = d.files;
+
+        for (let i in files) {
+          remoteData[i] = JSON.parse(files[i].content);
+        }
+
+        resolve();
+      })
+      .error(reject);
   });
 };
 

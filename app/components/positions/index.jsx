@@ -12,7 +12,7 @@ var Group = React.createClass({
         <div className="positions-item" key={index}>
           <a href="javascript:;"
             className="js-show-modal"
-            data-modalid={ele.modalID}
+            data-modalid={ele.id}
             style={{borderColor: this.props.color}}
             data-color={this.props.color}
           >
@@ -39,7 +39,8 @@ var Group = React.createClass({
 
 var Positions = React.createClass({
   render: function () {
-    const data = getData('position').positions;
+    let data = getData('position.json');
+    data = _.filter(data, v => v.jobs.length);
 
     var group = _.map(data, (ele, index) => {
       return <Group key={index} name={ele.depart} jobs={ele.jobs} index={index} color={ele.color} />;

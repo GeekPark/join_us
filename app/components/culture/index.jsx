@@ -25,7 +25,7 @@ var ListItem = React.createClass({
 
 var Culture = React.createClass({
     render: function () {
-      const sectionData = getData('page').culture;
+      const sectionData = getData('page.json').culture;
 
       var list = _.map(sectionData.list, (ele, index) => {
         var offset = index % 2 !== 0;

@@ -5,7 +5,7 @@ require('./index.styl');
 
 var About = React.createClass({
   render: function () {
-    const pageData = getData('page');
+    const pageData = getData('page.json');
     return (
       <div className="about-wrap">
         <h4 className="about-motto">
