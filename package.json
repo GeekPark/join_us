@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "build": "webpack -p",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --host 0.0.0.0",
     "production": "webpack -p --config webpack.production.config.js",
     "deploy": "npm run production; sh deploy.sh"
   },
