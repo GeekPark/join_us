@@ -1,6 +1,7 @@
 const $ = require('jquery');
 const _ = require('lodash');
-const GIST = 'https://api.github.com/gists/f1fac66eee98d3a31c49';
+// const GIST = 'https://api.github.com/gists/f1fac66eee98d3a31c49';
+const GIST = 'data.json';
 
 let remoteData = {};
 
