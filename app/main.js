@@ -6,6 +6,7 @@ var Header = require('./components/header/index.jsx');
 var About = require('./components/about/index.jsx');
 var Culture = require('./components/culture/index.jsx');
 var Positions  = require('./components/positions/index.jsx');
+var Maps  = require('./components/maps/index.jsx');
 var Footer = require('./components/footer/index.jsx');
 var Modal = require('./components/modal/index.jsx');
 
@@ -24,6 +25,7 @@ var Layout = React.createClass({
         <About />
         <Culture />
         <Positions />
+        <Maps />
         <Footer/>
         <Modal />
       </div>
