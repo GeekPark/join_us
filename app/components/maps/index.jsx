@@ -6,14 +6,7 @@ require('./index.styl');
 const POS = [116.500343,39.984760];
 const KEY = 'e36c86f80233fdeeb2661ed80c6b0eab';
 
-const loadScript = cb => {
-  const s = document.createElement('script');
-  s.onload = cb;
-  s.src = `//webapi.amap.com/maps?v=1.3&key=${KEY}`;
-  document.body.appendChild(s);
-};
-
-const initMap = () => {
+function initMap() {
   const center = window.innerWidth < 1080 ? POS : [116.490984,39.985136];
   const content = window.innerWidth > 1080 ? 'GeekPark 极客公园' : '北京市朝阳区酒仙桥路4号751 D·Park 正东集团院内 C8座105室 极客公园';
 
@@ -42,9 +35,7 @@ const initMap = () => {
 
 var Maps = React.createClass({
   componentDidMount: function() {
-    if (typeof AMap === 'undefined') {
-      loadScript(initMap);
-    }
+    initMap();
   },
   render: function () {
     return (
