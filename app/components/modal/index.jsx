@@ -8,7 +8,6 @@ var JobCont = React.createClass({
   render: function () {
     return (
       <div className="modal-job-list">
-        <h3>职位诱惑</h3>
         <div className="modal-job-request" dangerouslySetInnerHTML={{__html: this.props.request}}></div>
         <div className="modal-job-des" dangerouslySetInnerHTML={{__html: this.props.des}}></div>
       </div>
