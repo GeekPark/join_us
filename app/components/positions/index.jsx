@@ -41,7 +41,7 @@ var Positions = React.createClass({
   render: function () {
     let data = getData('position.json');
     data = _.filter(data, v => v.jobs.length);
-    data = _.sortBy(data, v => v.jobs.length);
+    data = _.sortBy(data, v => v.jobs.length).reverse();
 
     var group = _.map(data, (ele, index) => {
       return <Group key={index} name={ele.depart} jobs={ele.jobs} index={index} color={ele.color} />;
@@ -53,6 +53,9 @@ var Positions = React.createClass({
         </div>
         <section className="container">
           {group}
+          {group.length % 2 === 0 ? null :
+            <div className="position-group column four offset-one"></div>
+          }
         </section>
       </div>
     );
