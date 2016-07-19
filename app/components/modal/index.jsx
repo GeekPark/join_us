@@ -47,12 +47,12 @@ var ModalCont = React.createClass({
 
 var Modal = React.createClass({
   render: function () {
-    const modalData = getData('jobs.json');
+    const modalData = getData('jobs');
 
     var modalList = _.map(modalData, (ele, index) => {
       return <ModalCont
         title={ele.title}
-        id={ele.id}
+        id={index}
         type={ele.contType}
         data={ele.content}
         key={index}

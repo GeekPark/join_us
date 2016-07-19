@@ -39,7 +39,7 @@ var Group = React.createClass({
 
 var Positions = React.createClass({
   render: function () {
-    let data = getData('position.json');
+    let data = getData('position');
     data = _.filter(data, v => v.jobs.length);
     data = _.sortBy(data, v => v.jobs.length).reverse();
 
